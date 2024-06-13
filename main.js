@@ -82,3 +82,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.navLinks').classList.toggle('nav-active');
+});
