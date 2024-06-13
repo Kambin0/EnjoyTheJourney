@@ -68,9 +68,10 @@ body {
 
 header {
   background-image: linear-gradient(to top, var(--primary-color), transparent),
-  url("photos/waterfall.jpeg");
+  url("photos/ForrestBackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center 82%;
 }
 
 nav {
@@ -117,6 +118,37 @@ nav {
   padding: 1rem 0;
   color: var(--white);
   cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.navLinks.nav-active {
+    display: block;
+}
+
+.navLinks li {
+    padding: 1rem 0;
+    text-align: center;
 }
 
 
@@ -221,7 +253,28 @@ nav {
         margin-bottom: 10rem;
       }
 
-      
+      .galleryBtn:hover {
+        color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
+      }
+
+      @media (max-width: 768px) {
+        .galleryContent h4 {
+            font-size: 1.5rem; 
+        }
+    
+        .galleryContent p {
+            font-size: 0.9rem; 
+        }
+    
+        .galleryGrid {
+            grid-template-columns: 1fr 1fr; 
+            gap: 1rem;
+        }
+    } 
+
+
+
 
   /* discover */
 
@@ -287,6 +340,36 @@ nav {
     cursor: pointer;
   }
 
+  .discoverBtn:hover {
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+  }
+
+  @media (max-width: 768px) {
+    .discoverCardContent h4 {
+        font-size: 1.5rem;  /* Smaller font size for h4 */
+    }
+
+    .discoverCardContent p {
+        font-size: 0.9rem;  /* Smaller font size for p */
+    }
+
+    .discoverGrid {
+        grid-template-columns: 1fr;  /* Change grid to single column */
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .discoverCardContent h4 {
+        font-size: 1.2rem;  /* Even smaller font size for h4 */
+    }
+
+    .discoverCardContent p {
+        font-size: 0.8rem;  /* Even smaller font size for p */
+    }
+}
+
 
 
 /* about */
@@ -339,4 +422,9 @@ nav {
         color: var(--white);
         border: 1px solid var(--white);
         background-color: transparent;
+      }
+
+      .aboutBtn:hover {
+        color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
       }
